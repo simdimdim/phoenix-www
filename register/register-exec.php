@@ -41,9 +41,9 @@
 	
 	//Input Validations
 	if($login == '') {
-		$errmsg_arr[] = "Username can't be an empty string"; 
-		$errflag = true; 
-     }
+		$errmsg_arr[] = 'Login ID missing!';
+		$errflag = true;
+	}
 	if($password == '') {
 		$errmsg_arr[] = 'Password missing!';
 		$errflag = true;
@@ -82,12 +82,12 @@
 	if($errflag) {
 		$_SESSION['ERRMSG_ARR'] = $errmsg_arr;
 		session_write_close();
-		header("location: register-error.html");
+		header("location: register-form.php");
 		exit();
 	}
 
 	//Create INSERT query
-	$qry = "INSERT INTO t_account (name, pwd, pw2, city) VALUES('$login','".md5($_POST['password'])."','$password','$email')";
+	$qry = "INSERT INTO t_account (name, pwd, pw2, city, gd) VALUES('$login','".md5($_POST['password'])."','$password','$email', '999999')";
 	$result = @mysql_query($qry);
 	
 	//Check whether the query was successful or not
