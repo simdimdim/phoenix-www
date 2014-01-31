@@ -40,8 +40,8 @@
 	$email = clean($_POST['email']);
 	
 	//Input Validations
-	if(preg_match("/^[0-9a-zA-Z_-]$/", $login === 0) or strlen($login)<3{ 
-		$errmsg_arr[] = 'Username must contain only letters from "a" to "z" (Capital or not), numbers 0 - 9, underscore, dash and be longer than 3 symbols and shorter than 20'; 
+	if($password == '') {
+		$errmsg_arr[] = "Username can't be an empty string"; 
 		$errflag = true; 
      }
 	if($password == '') {
