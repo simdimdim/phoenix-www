@@ -40,7 +40,7 @@
 	$email = clean($_POST['email']);
 	
 	//Input Validations
-	if($password == '') {
+	if($login == '') {
 		$errmsg_arr[] = "Username can't be an empty string"; 
 		$errflag = true; 
      }
