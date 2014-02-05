@@ -7,13 +7,23 @@
 <link href="register/font.css" rel="stylesheet" type="text/css">
 </head>
 <body>
+<?php
+	if( isset($_SESSION['ERRMSG_ARR']) && is_array($_SESSION['ERRMSG_ARR']) && count($_SESSION['ERRMSG_ARR']) >0 ) {
+		echo '<ul class="err">';
+		foreach($_SESSION['ERRMSG_ARR'] as $msg) {
+			echo '<li>',$msg,'</li>'; 
+		}
+		echo '</ul>';
+		unset($_SESSION['ERRMSG_ARR']);
+	}
+?>
 <form id="loginForm" name="loginForm" method="post" action="register\register-exec.php">
 <table width="500" border="0" align="center" cellpadding="2" cellspacing="0" bgcolor="282828">
 	<tr>
 	  <td id="Name" height="108" align="center" colspan="2">Register Form</td>
 	</tr>
     <tr>
-      <td height="38" width="160" align="center">Account:</td>
+      <td height="38" width="160" align="center">Username:</td>
       <td height="38" width="180" align="center"><input name="login" type="text" class="textfield" id="login" maxlength="14"></td>
 	</tr>
 	<tr>
