@@ -1,3 +1,6 @@
+<?php
+	session_start();
+?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -7,6 +10,22 @@
 <link href="register/font.css" rel="stylesheet" type="text/css">
 </head>
 <body>
+<table width="500" border="0" align="center" cellpadding="2" cellspacing="0" bgcolor="282828">
+	<tr>
+		<td height="200" width="500" align="center" >
+<?php
+	if( isset($_SESSION['ERRMSG_ARR']) && is_array($_SESSION['ERRMSG_ARR']) && count($_SESSION['ERRMSG_ARR']) >0 ) {
+		echo "<div class="err">";
+		foreach($_SESSION['ERRMSG_ARR'] as $msg) {
+			echo "<p>",$msg,"</p>"; 
+		}
+		echo "</div>";
+		unset($_SESSION['ERRMSG_ARR']);
+	}
+?>
+		</td>
+	</tr>
+</table>
 <form id="loginForm" name="loginForm" method="post" action="register\register-exec.php">
 <table width="500" border="0" align="center" cellpadding="2" cellspacing="0" bgcolor="282828">
 	<tr>
