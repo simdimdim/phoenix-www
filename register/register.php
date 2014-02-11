@@ -16,7 +16,7 @@
 	  <td id="Name" height="108" align="center" colspan="2">Register Form</td>
 	</tr>
 	<tr>
-	<td id="Errors" height="38" align="center" colspan="2">
+	<td id="Errors" height="1" align="center" colspan="2">
 <?php
 	if( isset($_SESSION['ERRMSG_ARR']) && is_array($_SESSION['ERRMSG_ARR']) && count($_SESSION['ERRMSG_ARR']) > 0 ) {
 		echo "<div class='err'>";

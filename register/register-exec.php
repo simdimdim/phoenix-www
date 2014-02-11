@@ -44,14 +44,6 @@
 		$errmsg_arr[] = 'Username missing!';
 		$errflag = true;
 	}
-	if( strlen($login) < 3 ) {
-		$errmsg_arr[] = 'Username must be between 3 and 14 chracters!';
-		$errflag = true;
-	}
-	if( strlen($login) > 14 ) {
-		$errmsg_arr[] = 'Username must be between 3 and 14 chracters!';
-		$errflag = true;
-	}
 	if($password == '') {
 		$errmsg_arr[] = 'Password missing!';
 		$errflag = true;
@@ -60,8 +52,20 @@
 		$errmsg_arr[] = 'Confirm password missing!';
 		$errflag = true;
 	}
+	if($email == '') {
+		$errmsg_arr[] = 'Email missing!';
+		$errflag = true;
+	}
 	if( strcmp($password, $cpassword) != 0 ) {
 		$errmsg_arr[] = 'Passwords do not match!';
+		$errflag = true;
+	}
+	if( strlen($login) < 3 ) {
+		$errmsg_arr[] = 'Username must be between 3 and 14 chracters!';
+		$errflag = true;
+	}
+	if( strlen($login) > 14 ) {
+		$errmsg_arr[] = 'Username must be between 3 and 14 chracters!';
 		$errflag = true;
 	}
 	if( strlen($cpassword) < 6 ) {
@@ -70,10 +74,6 @@
 	}
 	if( strlen($cpassword) > 30 ) {
 		$errmsg_arr[] = 'Password must be between 6 and 30 chracters!';
-		$errflag = true;
-	}
-	if( strcmp($email, $email) != 0 ) {
-		$errmsg_arr[] = 'Email missing!';
 		$errflag = true;
 	}
 	
