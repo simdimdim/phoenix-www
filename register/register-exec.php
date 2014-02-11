@@ -98,7 +98,7 @@
 	if($errflag) {
 		$_SESSION['ERRMSG_ARR'] = $errmsg_arr;
 		session_write_close();
-		header("Location: register.html");
+		header("Location: register.php");
 		exit();
 	}
 
