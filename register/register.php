@@ -6,16 +6,20 @@
 <head>
 <title></title>
 <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
-<link href="background/background2.css" rel="stylesheet" type="text/css">
-<link href="register/font.css" rel="stylesheet" type="text/css">
+<link href="../background/background2.css" rel="stylesheet" type="text/css">
+<link href="font.css" rel="stylesheet" type="text/css">
 </head>
 <body>
+<form id="loginForm" name="loginForm" method="post" action="register-exec.php">
 <table width="500" border="0" align="center" cellpadding="2" cellspacing="0" bgcolor="282828">
 	<tr>
-		<td height="200" width="500" align="center" >
+	  <td id="Name" height="108" align="center" colspan="2">Register Form</td>
+	</tr>
+	<tr>
+	<td height="108" align="center" colspan="2">
 <?php
-	if( isset($_SESSION['ERRMSG_ARR']) && is_array($_SESSION['ERRMSG_ARR']) && count($_SESSION['ERRMSG_ARR']) >0 ) {
-		echo "<div class="err">";
+	if( isset($_SESSION['ERRMSG_ARR']) && is_array($_SESSION['ERRMSG_ARR']) && count($_SESSION['ERRMSG_ARR']) > 0 ) {
+		echo "<div class='err'>";
 		foreach($_SESSION['ERRMSG_ARR'] as $msg) {
 			echo "<p>",$msg,"</p>"; 
 		}
@@ -23,13 +27,7 @@
 		unset($_SESSION['ERRMSG_ARR']);
 	}
 ?>
-		</td>
-	</tr>
-</table>
-<form id="loginForm" name="loginForm" method="post" action="register\register-exec.php">
-<table width="500" border="0" align="center" cellpadding="2" cellspacing="0" bgcolor="282828">
-	<tr>
-	  <td id="Name" height="108" align="center" colspan="2">Register Form</td>
+	</td>
 	</tr>
     <tr>
       <td height="38" width="160" align="center">Account:</td>

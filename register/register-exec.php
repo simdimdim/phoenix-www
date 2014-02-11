@@ -48,6 +48,10 @@
 		$errmsg_arr[] = 'Username must be between 3 and 14 chracters!';
 		$errflag = true;
 	}
+	if( strlen($login) > 14 ) {
+		$errmsg_arr[] = 'Username must be between 3 and 14 chracters!';
+		$errflag = true;
+	}
 	if($password == '') {
 		$errmsg_arr[] = 'Password missing!';
 		$errflag = true;
@@ -61,6 +65,10 @@
 		$errflag = true;
 	}
 	if( strlen($cpassword) < 6 ) {
+		$errmsg_arr[] = 'Password must be between 6 and 30 chracters!';
+		$errflag = true;
+	}
+	if( strlen($cpassword) > 30 ) {
 		$errmsg_arr[] = 'Password must be between 6 and 30 chracters!';
 		$errflag = true;
 	}
@@ -90,7 +98,7 @@
 	if($errflag) {
 		$_SESSION['ERRMSG_ARR'] = $errmsg_arr;
 		session_write_close();
-		header("location: ../register.html");
+		header("Location: register.html");
 		exit();
 	}
 
@@ -100,7 +108,7 @@
 	
 	//Check whether the query was successful or not
 	if($result) {
-		header("location: register-success.html");
+		header("Location: register-success.html");
 		exit();
 	}else {
 		die("Query Failed");
