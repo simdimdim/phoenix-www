@@ -42,9 +42,12 @@
       <td height="38" width="180" align="center"><input name="cpassword" type="password" class="textfield" id="cpassword" maxlength="30"></td>
     </tr>
 	<tr>
-      <td height="38" width="160" align="center">E-mail:</td>
+      <td height="38" width="160" align="center">E-mail: **</td>
       <td height="38" width="180" align="center"><input name="email" type="text" class="textfield" id="email"></td>
     </tr>
+	<tr>
+	  <td id="Mail" height="10" align="center" colspan="2">**If you put a wrong or not existing E-mail you will NOT be able to use function "Recover password"!</td>
+	</tr>
 	<tr>
 	  <td height="83" align="center" colspan="2"><input id="RB" type="submit" name="Submit" value="Register"></td>
 	</tr>

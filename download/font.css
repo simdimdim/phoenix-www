@@ -11,3 +11,20 @@ font-weight: bold;
 table {
 border-radius:14px;
 }
+
+h2 {
+font-size: 30px;
+}
+
+h3 {
+font-size: 30px;
+color: #b84a00;
+}
+
+h4 {
+color: #b84a00;
+}
+
+ul {
+text-align:left;
+}
