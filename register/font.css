@@ -16,6 +16,16 @@ border-radius:14px;
 font-size: 30px;
 }
 
+#Errors {
+font-size: 16px;
+color: #b84a00;
+}
+
+#Mail {
+font-size: 15px;
+color: #b84a00;
+}
+
 #RB {
 
 font-family: Gabriola, Monotype Corsiva, Vijaya;

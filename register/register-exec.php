@@ -41,7 +41,7 @@
 	
 	//Input Validations
 	if($login == '') {
-		$errmsg_arr[] = 'Login ID missing!';
+		$errmsg_arr[] = 'Username missing!';
 		$errflag = true;
 	}
 	if($password == '') {
@@ -52,12 +52,28 @@
 		$errmsg_arr[] = 'Confirm password missing!';
 		$errflag = true;
 	}
+	if($email == '') {
+		$errmsg_arr[] = 'Email missing!';
+		$errflag = true;
+	}
 	if( strcmp($password, $cpassword) != 0 ) {
 		$errmsg_arr[] = 'Passwords do not match!';
 		$errflag = true;
-	}	
-	if( strcmp($email, $email) != 0 ) {
-		$errmsg_arr[] = 'Email missing!';
+	}
+	if( strlen($login) < 3 ) {
+		$errmsg_arr[] = 'Username must be between 3 and 14 chracters!';
+		$errflag = true;
+	}
+	if( strlen($login) > 14 ) {
+		$errmsg_arr[] = 'Username must be between 3 and 14 chracters!';
+		$errflag = true;
+	}
+	if( strlen($cpassword) < 6 ) {
+		$errmsg_arr[] = 'Password must be between 6 and 30 chracters!';
+		$errflag = true;
+	}
+	if( strlen($cpassword) > 30 ) {
+		$errmsg_arr[] = 'Password must be between 6 and 30 chracters!';
 		$errflag = true;
 	}
 	
@@ -82,17 +98,17 @@
 	if($errflag) {
 		$_SESSION['ERRMSG_ARR'] = $errmsg_arr;
 		session_write_close();
-		header("location: register-error.html");
+		header("Location: register.php");
 		exit();
 	}
 
 	//Create INSERT query
-	$qry = "INSERT INTO t_account (name, pwd, pw2, city, gd) VALUES('$login','".md5($_POST['password'])."','$password','$email', '300')";
+	$qry = "INSERT INTO t_account (name, pwd, pw2, city, gd) VALUES('$login','".md5($_POST['password'])."','$password','$email', '500')";
 	$result = @mysql_query($qry);
 	
 	//Check whether the query was successful or not
 	if($result) {
-		header("location: register-success.html");
+		header("Location: register-success.html");
 		exit();
 	}else {
 		die("Query Failed");
