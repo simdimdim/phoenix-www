@@ -18,3 +18,12 @@ border-radius:14px;
 ol {
 text-align:left;
 }
+
+#Valid {
+position: absolute;
+bottom: 0;
+}
+
+#FB {
+border-radius:14px;
+}
