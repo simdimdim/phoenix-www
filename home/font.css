@@ -20,13 +20,7 @@ text-align:left;
 }
 
 #Valid {
-bottom: 0;
-right: 0;
+padding-top: 238px;
 padding-bottom: 3px;
 padding-right: 3px;
-}
-
-#FB {
-padding-bottom: 3px;
-padding-left: 3px;
 }
