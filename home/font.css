@@ -18,3 +18,8 @@ border-radius:14px;
 ol {
 text-align:left;
 }
+
+#Valid {
+position: absolute;
+bottom: 0;
+}
